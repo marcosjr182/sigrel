@@ -1,6 +1,6 @@
 class Activity
 
-	attr_accessor :name
+  attr_accessor :name
 
   def initialize (name, date,time,description)
     @name = name
