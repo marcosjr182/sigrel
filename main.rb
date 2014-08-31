@@ -11,6 +11,7 @@ loop do
   puts("MENU-------")
   puts("1 - Criar Relatorio ")
   puts("2 - Listar Relatorios")
+  puts("3 - Editar Relatorio")
   puts("0 - Sair")
   op = gets.chomp.to_i
   system("clear")
