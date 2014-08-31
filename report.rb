@@ -10,8 +10,23 @@ class Report
     @activities = []
   end
 
-  def add_activity (activity)
-    @activities.insert(@activities.length, activity)
+  def add_activity 
+    system("clear")
+    
+    puts "Digite o nome da atividade: "
+    name = gets.chomp
+    
+    date = ""
+    loop do
+      puts "Digite a data da atividade (DD/MM/AAAA): "
+      date = gets.chomp
+      break if ((date[5] == date[2] && date[5] == "/"))
+    end
+
+    puts "Digite uma descricao da atividade: "
+    description = gets.chomp
+    
+    @activities.insert(@activities.length, Activity.new(name, date,description))
   end
 
   def del_activity (name)
