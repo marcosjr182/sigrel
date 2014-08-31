@@ -4,10 +4,12 @@ class Report
 
   attr_accessor :name
 
-  def initialize (name, description)
+  def initialize (id,name, description)
+    @id = id
     @name = name
     @description = description
     @activities = []
+    @id_activity = 0
   end
 
   def add_activity 
@@ -26,7 +28,8 @@ class Report
     puts "Digite uma descricao da atividade: "
     description = gets.chomp
     
-    @activities.insert(@activities.length, Activity.new(name, date,description))
+    @activities.insert(@activities.length, Activity.new(@id_activity,@id,name, date,description))
+    @id_activity += 1
   end
 
   def del_activity (name)
